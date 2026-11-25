@@ -1,6 +1,9 @@
 # Extrator Forense de Entidades
 
-Para uma explicação simples, comandos passo a passo e roteiro de apresentação, consulte [GUIA_USO_APRESENTACAO.md](GUIA_USO_APRESENTACAO.md). Os documentos do projeto ficam em [.docs/PRD_Extrator_Forense_Grupo2.md](.docs/PRD_Extrator_Forense_Grupo2.md) e [.docs/PRD_PREPARACAO_OUTRO_COMPUTADOR.md](.docs/PRD_PREPARACAO_OUTRO_COMPUTADOR.md).
+Para uma explicação simples, consulte [GUIA_USO_APRESENTACAO.md](GUIA_USO_APRESENTACAO.md) e [VISÃO_GERAL_PARA_APRESENTAÇÃO.md](.docs/VISÃO_GERAL_PARA_APRESENTAÇÃO.md). Os documentos completos ficam em [.docs/](.docs/), incluindo o PRD original e o PRD de preparação.
+
+Para criar e baixar os outputs do Fine-Tuned no Google Colab, consulte [COMO_FAZER_TREINO_COLAB.md](.docs/COMO_FAZER_TREINO_COLAB.md).
+Para uma versão detalhada destinada a outra pessoa executar o treino, consulte [EXECUTAR_FINE_TUNED_EM_OUTRO_COMPUTADOR.md](.docs/EXECUTAR_FINE_TUNED_EM_OUTRO_COMPUTADOR.md).
 
 Projeto em Python para extrair `data`, `ip`, `usuario`, `arquivo` e `hash` de documentos ruidosos e devolver uma lista JSON.
 
