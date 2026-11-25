@@ -1,0 +1,16 @@
+# Dependências para o Google Colab.
+# Não fixa o torch: usa o PyTorch que já vem no Colab, compatível com a GPU e com o Python dele.
+# sentencepiece e bitsandbytes ficam em versões que têm pacote pronto para Python 3.12+.
+transformers==4.46.3
+datasets==3.1.0
+peft==0.13.2
+trl==0.12.1
+accelerate==1.1.1
+bitsandbytes>=0.45
+sentencepiece>=0.2.1
+PyYAML>=6.0.2
+pypdf==5.1.0
+pandas>=2.2.3
+matplotlib>=3.9.3
+requests>=2.32.3
+pytest>=8.3.3

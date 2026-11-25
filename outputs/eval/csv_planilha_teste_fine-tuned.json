@@ -1,0 +1,116 @@
+{
+  "arquivo": "data/samples/planilha_teste.csv",
+  "sistema": "Fine-Tuned",
+  "linhas": 8,
+  "linhas_com_gabarito": 8,
+  "metricas": {
+    "valid_json_raw": 1.0,
+    "valid_json_clean": 1.0,
+    "schema_valid": 1.0,
+    "entity": {
+      "data": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307692
+      },
+      "ip": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "usuario": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091
+      },
+      "arquivo": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "hash": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8
+      }
+    },
+    "micro_f1": 0.9056603773584906,
+    "macro_f1": 0.8956643356643357,
+    "exact_match": 0.625,
+    "hallucination": 0.07407407407407407
+  },
+  "resultados": [
+    {
+      "linha": 2,
+      "texto": "No dia 14/03 o IP 192.168.1.45 foi usado pelo usuario admin às 10:15h; arquivo backup.zip",
+      "esperado": "[{\"data\":\"2026-03-14 10:15\",\"ip\":\"192.168.1.45\",\"usuario\":\"admin\",\"arquivo\":\"backup.zip\",\"hash\":null}]",
+      "previsto": "[{\"data\":\"2026-03-14 10:15\",\"ip\":\"192.168.1.45\",\"usuario\":\"admin\",\"arquivo\":\"backup.zip\",\"hash\":null}]",
+      "status": "ok",
+      "segundos": 20.99,
+      "exact_match": true
+    },
+    {
+      "linha": 3,
+      "texto": "Alerta SIEM 2026-04-02 08:30: origem 10[.]0[.]5[.]17, conta srv_backup, artefato dump_db.sql, sha1 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8",
+      "esperado": "[{\"data\":\"2026-04-02 08:30\",\"ip\":\"10.0.5.17\",\"usuario\":\"srv_backup\",\"arquivo\":\"dump_db.sql\",\"hash\":\"5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8\"}]",
+      "previsto": "[{\"data\":\"2026-04-02 08:30\",\"ip\":\"10.0.5.17\",\"usuario\":null,\"arquivo\":\"dump_db.sql\",\"hash\":\"5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8\"}]",
+      "status": "ok",
+      "segundos": 6.89,
+      "exact_match": false
+    },
+    {
+      "linha": 4,
+      "texto": "Ticket interno 88421, versão 4.2.1, sem vínculo com incidente.",
+      "esperado": "[]",
+      "previsto": "[]",
+      "status": "ok",
+      "segundos": 0.15,
+      "exact_match": true
+    },
+    {
+      "linha": 5,
+      "texto": "O IP 10.20.30.40 foi usado por joao.silva em 2026-03-15 09:30, abrindo evidencias.pdf. Depois, o IP 172.16.8.9 foi usado por analista1 em 2026-03-15 11:45, abrindo logs_12.log.",
+      "esperado": "[{\"data\":\"2026-03-15 09:30\",\"ip\":\"10.20.30.40\",\"usuario\":\"joao.silva\",\"arquivo\":\"evidencias.pdf\",\"hash\":null},{\"data\":\"2026-03-15 11:45\",\"ip\":\"172.16.8.9\",\"usuario\":\"analista1\",\"arquivo\":\"logs_12.log\",\"hash\":null}]",
+      "previsto": "[{\"data\":\"2026-03-15 09:30\",\"ip\":\"10.20.30.40\",\"usuario\":\"joao.silva\",\"arquivo\":\"evidencias.pdf\",\"hash\":null},{\"data\":\"2026-03-15 11:45\",\"ip\":\"172.16.8.9\",\"usuario\":\"analista1\",\"arquivo\":\"logs_12.log\",\"hash\":null}]",
+      "status": "ok",
+      "segundos": 7.45,
+      "exact_match": true
+    },
+    {
+      "linha": 6,
+      "texto": "O usuario analista1 abriu evidencia.pdf em 2026-03-14 às 11:45",
+      "esperado": "[{\"data\":\"2026-03-14 11:45\",\"ip\":null,\"usuario\":\"analista1\",\"arquivo\":\"evidencia.pdf\",\"hash\":null}]",
+      "previsto": "[{\"data\":\"2026-03-14 11:45\",\"ip\":null,\"usuario\":\"analista1\",\"arquivo\":\"evidencia.pdf\",\"hash\":null}]",
+      "status": "ok",
+      "segundos": 3.98,
+      "exact_match": true
+    },
+    {
+      "linha": 7,
+      "texto": "Email do SOC: em 20/05 o host 203.0.113.77 enviou relatorio_q2.xlsx (md5 9e107d9d372bb6826bd81d3542a419d6) sem usuário identificado.",
+      "esperado": "[{\"data\":\"2026-05-20\",\"ip\":\"203.0.113.77\",\"usuario\":null,\"arquivo\":\"relatorio_q2.xlsx\",\"hash\":\"9e107d9d372bb6826bd81d3542a419d6\"}]",
+      "previsto": "[{\"data\":\"2026-05-20 15:00\",\"ip\":\"203.0.113.77\",\"usuario\":null,\"arquivo\":\"relatorio_q2.xlsx\",\"hash\":\"9e107d9d372bb6826bd81d3542a419d6\"}]",
+      "status": "ok",
+      "segundos": 5.93,
+      "exact_match": false
+    },
+    {
+      "linha": 8,
+      "texto": "Na triagem, o hash parcial 4a8f1c2d... foi citado junto ao arquivo payload.exe pelo usuario usuario_teste.",
+      "esperado": "[{\"data\":null,\"ip\":null,\"usuario\":\"usuario_teste\",\"arquivo\":\"payload.exe\",\"hash\":null}]",
+      "previsto": "[{\"data\":\"2026-05-15 17:00\",\"ip\":null,\"usuario\":\"usuario_teste\",\"arquivo\":\"payload.exe\",\"hash\":\"4a8f1c2d9b5f89999999999999999999\"}]",
+      "status": "ok",
+      "segundos": 5.72,
+      "exact_match": false
+    },
+    {
+      "linha": 9,
+      "texto": "Reunião de alinhamento sobre o orçamento de peças; nenhuma evidência digital foi coletada.",
+      "esperado": "[]",
+      "previsto": "[]",
+      "status": "ok",
+      "segundos": 0.19,
+      "exact_match": true
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "loss": 1.5403,
+    "grad_norm": 1.4212865829467773,
+    "learning_rate": 0.00018968727415326884,
+    "epoch": 0.5714285714285714,
+    "step": 10
+  },
+  {
+    "eval_loss": 0.7538102865219116,
+    "eval_runtime": 6.0209,
+    "eval_samples_per_second": 4.983,
+    "eval_steps_per_second": 2.491,
+    "epoch": 0.5714285714285714,
+    "step": 10
+  },
+  {
+    "loss": 0.6934,
+    "grad_norm": 0.3094604015350342,
+    "learning_rate": 0.00014422886902190014,
+    "epoch": 1.1428571428571428,
+    "step": 20
+  },
+  {
+    "eval_loss": 0.5761064887046814,
+    "eval_runtime": 6.2498,
+    "eval_samples_per_second": 4.8,
+    "eval_steps_per_second": 2.4,
+    "epoch": 1.1428571428571428,
+    "step": 20
+  },
+  {
+    "loss": 0.5631,
+    "grad_norm": 0.2832759916782379,
+    "learning_rate": 8.049096779838719e-05,
+    "epoch": 1.7142857142857144,
+    "step": 30
+  },
+  {
+    "eval_loss": 0.5372565984725952,
+    "eval_runtime": 6.0881,
+    "eval_samples_per_second": 4.928,
+    "eval_steps_per_second": 2.464,
+    "epoch": 1.7142857142857144,
+    "step": 30
+  },
+  {
+    "loss": 0.6018,
+    "grad_norm": 0.2438344657421112,
+    "learning_rate": 2.4816019252102273e-05,
+    "epoch": 2.2857142857142856,
+    "step": 40
+  },
+  {
+    "eval_loss": 0.5256520509719849,
+    "eval_runtime": 6.1771,
+    "eval_samples_per_second": 4.857,
+    "eval_steps_per_second": 2.428,
+    "epoch": 2.2857142857142856,
+    "step": 40
+  },
+  {
+    "loss": 0.5418,
+    "grad_norm": 0.2898775637149811,
+    "learning_rate": 2.141076761396521e-07,
+    "epoch": 2.857142857142857,
+    "step": 50
+  },
+  {
+    "eval_loss": 0.5226805806159973,
+    "eval_runtime": 6.1105,
+    "eval_samples_per_second": 4.91,
+    "eval_steps_per_second": 2.455,
+    "epoch": 2.857142857142857,
+    "step": 50
+  },
+  {
+    "train_runtime": 303.4008,
+    "train_samples_per_second": 1.384,
+    "train_steps_per_second": 0.168,
+    "total_flos": 1673226414237696.0,
+    "train_loss": 0.7828308893185035,
+    "epoch": 2.914285714285714,
+    "step": 51
+  }
+]
