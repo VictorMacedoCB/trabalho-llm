@@ -1,9 +1,16 @@
 """Revela os sistemas cegos e gera resultados, comparação e relatório."""
 
 import json
+import sys
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 
 from src.eval.metrics import calculate_metrics
 

@@ -3,9 +3,13 @@
 import argparse
 import json
 import random
+import sys
 from pathlib import Path
 
-from src.inference import extract
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from src.inference import generate_raw
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -18,6 +22,8 @@ def main() -> None:
     parser.add_argument("--adapter", default="outputs/adapter")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+    if not (Path(args.adapter) / "adapter_config.json").exists():
+        raise SystemExit(f"Adaptador não encontrado em '{args.adapter}'. Treine o modelo antes da avaliação cega.")
     samples = load_jsonl(Path(args.test))
     rng = random.Random(args.seed)
     order = list(range(len(samples)))
@@ -36,8 +42,8 @@ def main() -> None:
             sample = samples[index]
             text = sample["messages"][1]["content"]
             try:
-                predicted = extract(text, adapter)
-                raw_output = json.dumps(predicted, ensure_ascii=False)
+                # Guarda a saída bruta: a limpeza e o parse ficam a cargo das métricas.
+                raw_output = generate_raw(text, adapter)
                 status = "ok"
             except Exception as exc:
                 raw_output = ""

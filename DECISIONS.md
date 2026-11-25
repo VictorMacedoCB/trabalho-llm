@@ -7,3 +7,4 @@
 - **Inferência:** backend local por padrão e backend HTTP opcional pelo serviço OpenAI-compatible.
 - **Treino:** o script usa o stack Transformers + PEFT + bitsandbytes como implementação direta e mantém os parâmetros em YAML.
 - **Ambiguidade de IP em texto sem entidade:** exemplos marcados como não relacionados são excluídos pelo gabarito.
+- **Treino sem GPU:** o script detecta o hardware e, sem GPU NVIDIA, faz LoRA em float32 na CPU (sem 4-bit). Mais lento, mas permite treinar em um notebook comum; o modo usado fica registrado em `outputs/curves/hparams.md`.
